@@ -30,7 +30,7 @@ app.use(morgan('dev'));
 // To make two different URLS to talk to each other through fetch();
 app.use(cors({
   // The below is saying that local host 3000 is the only one allowed to make the request to localhost 5000.
-  origin: "http://localhost:3000"
+  // origin: "http://localhost:3000"
 }));
 
 // This connects the entry level file to the index of routes.
