@@ -2,8 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-require('dotenv').config();
-
+require('dotenv').config({ path: '.env' });
 
 // Heroku wont always use port 5000
 const PORT = process.env.PORT || 5000
@@ -16,7 +15,7 @@ const app = express();
 const dbConfig = {useNewUrlParser: true, useUnifiedTopology: true}
 
 // Mongoose
-mongoose.connect(process.env.DB_URL, (error) => {
+mongoose.connect(process.env.DB_URL, dbConfig, (error) => {
   if (error) {
     console.log(`error X`)
   } else {
@@ -37,4 +36,4 @@ app.use(cors({
 // This connects the entry level file to the index of routes.
 app.use(require('./routes/index'));
 
-app.listen(PORT,  () => console.log('Listening on port ${PORT}'))
+app.listen(PORT,  () => console.log(`Listening on port ${PORT}`))
