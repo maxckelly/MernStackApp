@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
-require('dotenv').config({ path: '.env' });
+require('dotenv').config();
 
 // Heroku wont always use port 5000
 const PORT = process.env.PORT || 5000
