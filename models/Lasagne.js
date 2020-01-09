@@ -11,4 +11,4 @@ const lasagneSchema = new Schema({
 
 const Lasagne = mongoose.model('Lasagne', lasagneSchema);
 
-module.export = Lasagne;
+module.exports = Lasagne;
